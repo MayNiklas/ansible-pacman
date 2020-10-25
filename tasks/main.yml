@@ -4,6 +4,7 @@
 - name: "Install packages defined in pacman_packages"
   become: true
   pacman:
+    update_cache: yes
     name: "{{ item }}"
     state: latest
   loop: "{{ pacman_packages }}"
