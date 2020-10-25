@@ -1,8 +1,10 @@
 ---
 # tasks file for ansible-pacman
 
-- name: "Install necessary packages"
+- name: "Install packages defined in pacman_packages"
+  become: true
   pacman:
     name: "{{ item }}"
     state: latest
   loop: "{{ pacman_packages }}"
+  when: pacman_packages|default([])|count > 0
