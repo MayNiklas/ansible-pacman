@@ -1,2 +1,8 @@
 ---
 # tasks file for ansible-pacman
+
+- name: "Install necessary packages"
+  pacman:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ pacman_packages }}"
