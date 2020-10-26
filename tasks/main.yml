@@ -14,8 +14,9 @@
   become: true
   lineinfile:
     dest: /etc/pacman.conf
-    insertafter: '#?\[multilib\]'
-    line: '\1'
+    regexp: '#?Include = \/etc\/pacman.d\/mirrorlist'
+    insertafter: '\[multilib\]'
+    line: 'Include = /etc/pacman.d/mirrorlist'
 
 - name: "Install packages defined in pacman_packages"
   become: true
