@@ -1,6 +1,22 @@
 ---
 # tasks file for ansible-pacman
 
+# multilib repos contain 32bit applications like steam
+- name: multilib repo's
+  become: true
+  lineinfile:
+    dest: /etc/pacman.conf
+    regexp: '#?\[multilib\]'
+    line: '[multilib]'
+
+# multilib repos contain 32bit applications like steam
+- name: multilib repo's
+  become: true
+  lineinfile:
+    dest: /etc/pacman.conf
+    insertafter: '#?\[multilib\]'
+    line: '\1'
+
 - name: "Install packages defined in pacman_packages"
   become: true
   pacman:
