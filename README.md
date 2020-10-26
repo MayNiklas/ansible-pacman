@@ -1,4 +1,4 @@
-Role Name
+ansible-pacman
 =========
 [![Build Status](https://travis-ci.com/MayNiklas/ansible-pacman.svg?branch=main)](https://travis-ci.com/MayNiklas/ansible-pacman)
 
