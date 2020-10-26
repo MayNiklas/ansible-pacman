@@ -1,7 +1,8 @@
 Role Name
 =========
+[![Build Status](https://travis-ci.com/MayNiklas/ansible-pacman.svg?branch=main)](https://travis-ci.com/MayNiklas/ansible-pacman)
 
-A brief description of the role goes here.
+- Installs packages stored in variable pacman_packages
 
 Requirements
 ------------
